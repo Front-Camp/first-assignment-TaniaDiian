@@ -9,6 +9,27 @@
  */
 const truncate = (str, length = 0, replacer = '...') => {
   /* your logic here...*/
+  if(str.split('').length < length){
+    return str;
+  }
+  else if(str.split('').length == 0){
+    return str;
+  }else{
+    let arrStr = str.split('');
+    let arrReplacer = replacer.split('');
+
+    arrStr = arrStr.slice(arrStr.length, length);
+    let arrReplacerLength = arrReplacer.length - 1;
+
+    for (var i = arrStr.length - 1; i >= 0; i--) {
+      if(arrReplacerLength >= 0){
+        arrStr[i] = arrReplacer[arrReplacerLength];
+        arrReplacerLength--;
+      }
+      
+    }
+    return arrStr.join('');
+  }
 };
 
 export default truncate;

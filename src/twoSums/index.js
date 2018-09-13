@@ -10,6 +10,19 @@
  */
 const twoSums = (arr, base) => {
   /* your logic here...*/
+  let newArr = [];
+  for(let i = 0; i < arr.length; i++ ){
+    let sumArr = newArr.reduce(
+      function(sum, current){
+      if(!isNaN(parseFloat(current))){
+          return sum+parseFloat(current);
+          };
+      }, 0); 
+    if((arr[i] + sumArr) =< base){
+      newArr.push(arr[i])
+    }
+  }
+  return newArr;
 };
 
 export default twoSums;

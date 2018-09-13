@@ -8,6 +8,11 @@
 */
 const max = arr => {
   /* your logic here...*/
+
+
+   return arr.reduce(function (p, v) {
+    return ( p > v ? p : v );
+  });
 };
 
 export default max;
